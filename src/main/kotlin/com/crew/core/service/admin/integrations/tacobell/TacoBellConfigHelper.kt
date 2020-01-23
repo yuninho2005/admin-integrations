@@ -3,13 +3,12 @@ package com.crew.core.service.admin.integrations.tacobell
 import com.amazonaws.services.s3.AmazonS3Client
 import com.fasterxml.jackson.core.type.TypeReference
 import org.apache.logging.log4j.LogManager
+import org.springframework.stereotype.Component
 import java.text.SimpleDateFormat
 import java.util.Date
 
-class TacoBellConfigHelper(
-    private val amazonS3Client: AmazonS3Client,
-    private val s3WorkingBucket: String
-) {
+@Component
+class TacoBellConfigHelper{
     companion object {
         private val LOG = LogManager.getLogger(TacoBellConfigHelper::class.java)
         private const val TB_S3_LOCATION_FILE_PREFIX = "taco-bell/locations/"

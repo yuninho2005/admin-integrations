@@ -2,15 +2,15 @@ package com.crew.core.service.admin
 
 import com.crew.core.service.admin.integrations.tacobell.TacoBellConfigHelper
 import org.apache.logging.log4j.LogManager
+import org.springframework.stereotype.Component
+import org.springframework.stereotype.Service
 import java.time.ZoneId
 import java.util.Date
 
+@Component
 class AdminIntegrationsService(
     private val helper: TacoBellConfigHelper
 ) {
-    companion object {
-        private val LOG = LogManager.getLogger(AdminIntegrationsService::class.java)
-    }
 
     fun getTacoBellLocationFileForEnterprise(enterpriseId: String): Map<String, String> {
         return  mutableMapOf(
@@ -39,7 +39,7 @@ class AdminIntegrationsService(
 
             return locationMap
         } catch (e: Exception) {
-            LOG.error("Error while updating locations", e)
+            println(e)
         }
 
         return emptyMap()
