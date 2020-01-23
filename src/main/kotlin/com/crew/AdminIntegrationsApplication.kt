@@ -1,4 +1,4 @@
-package com.crew.api.resource.admin
+package com.crew
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
